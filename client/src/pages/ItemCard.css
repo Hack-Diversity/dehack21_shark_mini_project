@@ -1,0 +1,61 @@
+.card-item {
+  margin: .5rem .5rem;
+}
+
+.card-item-content {
+  padding: 0;
+  background-color: white;
+}
+
+.card-item-icon {
+  text-align: center;
+  height: 12rem !important;
+  transform: scale(8) !important;
+  padding-top: 5rem !important;
+  color: rgb(0, 5, 146) !important;
+} 
+
+.book-icon {
+  color: rgb(0, 5, 146) !important;  
+}
+.card-item-title {
+ margin-top: 2rem;
+}
+
+.card-item-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-item-info h3 {
+  text-align: left;
+  margin: 0 0 0.3rem 0;
+}
+.card-item-info h6{
+  text-align: left;
+  margin: 0 0 0.3rem 0;
+  font-style: italic;
+}
+
+.card-item-info p {
+  text-align: left;
+  margin: 0 0 0 0;
+}
+
+.card-item-buttons {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  font-weight: 700;
+  border: none;
+}
+
+
+.card-item-button{
+  padding: .8rem;
+  margin: 0 1rem;
+  background-color: rgb(0, 5, 146);
+  color: white;
+  border: none;
+  border-radius: 3px;
+}

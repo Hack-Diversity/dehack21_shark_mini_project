@@ -237,7 +237,9 @@ class ItemInsert extends Component {
 
                 <Button onClick={this.handleInsertItem}>Add Item</Button>
                 <CancelButton href={'/items/list'}>Cancel</CancelButton>
+                
             </Wrapper>
+
         );
     }
 }
