@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
 import Links from './Links';
 
 const Container = styled.div.attrs({
@@ -12,7 +11,7 @@ const Container = styled.div.attrs({
 `;
 
 const Nav = styled.nav.attrs({
-    className: 'navbar navbar-expand-lg navbar-dark bg-dark',
+    className: 'navbar navbar-expand-md navbar-dark bg-dark',
 })`
     margin-bottom: 20px;
 

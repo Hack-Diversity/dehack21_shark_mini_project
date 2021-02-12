@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
 import Logo from './Logo';
 
 const HomeWrapper = styled.div``;
@@ -38,33 +37,48 @@ const homeStyles = {
     marginLeft: `1em`
 };
 
+const brandStyles = {
+    marginRight: '10rem',
+    fontSize: '1.5rem'
+};
+
 const logoStyles = {
     height: '40px',
     width: '40px',
+    paddingBottom: '.3rem',
 };
 
 class Links extends Component {
     render() {
         return (
             <React.Fragment>
+
                 <HomeWrapper>
                     <Logo logoStyles={logoStyles} />
                     <Link
                         to="/"
                         className="navbar-brand"
-                        style={homeStyles}
+                        style={brandStyles}
                     >
-                        Home
+                        Coffe shop
                     </Link>
                 </HomeWrapper>
                 <Collapse>
                     <List>
                         <Item>
                             <Link
+                            to="/"
+                            className="nav-link"
+                            >
+                            Home
+                            </Link>
+                        </Item>
+                        <Item>
+                            <Link
                                 to="/items"
                                 className="nav-link"
                             >
-                                Items
+                                Books
                             </Link>
                         </Item>
                         <Item>
@@ -72,12 +86,12 @@ class Links extends Component {
                                 to="/item/create"
                                 className="nav-link"
                             >
-                                Create Item
+                                Add Books
                             </Link>
                         </Item>
                         <Item>
                             <Link to="/items/react-table-v6" className="nav-link">
-                                Items (react-table-v6)
+                                Admin Login
                             </Link>
                         </Item>
                     </List>

@@ -15,7 +15,7 @@ const items = [
     creator: 'u1'
   },
   {
-    id: 'p1',
+    id: 'p2',
     title: 'To kill a Mockingbird',
     author: "Harper Lee",
     year: "1960",
@@ -26,7 +26,7 @@ const items = [
     creator: 'u1'
   },
   {
-    id: 'p1',
+    id: 'p3',
     title: 'To kill a Mockingbird',
     author: "Harper Lee",
     year: "1960",
@@ -37,7 +37,7 @@ const items = [
     creator: 'u1'
   },
   {
-    id: 'p1',
+    id: 'p4',
     title: 'To kill a Mockingbird',
     author: "Harper Lee",
     year: "1960",
@@ -48,7 +48,7 @@ const items = [
     creator: 'u1'
   },
   {
-    id: 'p1',
+    id: 'p5',
     title: 'To kill a Mockingbird',
     author: "Harper Lee",
     year: "1960",
@@ -70,7 +70,8 @@ const ItemList = props => {
   // }
 
   return (
-    <ul className="item-list">
+    <div className="list-container">
+      <ul className="item-list">
       {items.map(item => (
         <ItemCard
           key={item.id}
@@ -85,6 +86,8 @@ const ItemList = props => {
         />
       ))}
     </ul>
+    </div>
+    
   );
 };
 

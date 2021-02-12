@@ -1,5 +1,7 @@
 import React from 'react';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
+// import MenuBookOutlinedIcon from '@material-ui/icons/MenuBookOutlined';
+import MenuBookTwoToneIcon from '@material-ui/icons/MenuBookTwoTone';
+
 import './ItemCard.css';
 
 const ItemCard = props => {
@@ -7,9 +9,11 @@ const ItemCard = props => {
     <React.Fragment>
       <li className="card-item">
         <div className="card-item-content">
+        <div className="card-item-image">
           <div className="card-item-icon">
-            <MenuBookIcon classname="book-icon"/>
+            <MenuBookTwoToneIcon className="book-icon"/>
           </div>
+        </div>
           <div className="card-item-info">
             <h3>
             To Kill a Mokingbird
@@ -27,7 +31,9 @@ const ItemCard = props => {
               BORROW
             </button>
             <button className="card-item-button">
+              
               RETURN
+              
             </button>
           </div>
         </div>
