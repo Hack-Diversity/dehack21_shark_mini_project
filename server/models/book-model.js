@@ -1,31 +1,31 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Item = new Schema(
+const Book = new Schema(
     {
-        name: {
+        Title: {
             type: String,
             required: true
         },
-        daysOfWeek: {
+        Authors: {
             type: Map,
             of: String,
             required: false
         },
-        timeframeNote: {
-            type: String,
+        Year_Of_Publication: {
+            type: Date,
             required: false
         },
-        priority: {
+        ISBN: {
             type: Number,
             required: false
         },
-        content: {
-            type: String,
+        Number_Of_Copies: {
+            type: Number,
             required: true
         },
     },
     { timestamps: true },
 );
 
-module.exports = mongoose.model('books', Item);
+module.exports = mongoose.model('books', Book);
