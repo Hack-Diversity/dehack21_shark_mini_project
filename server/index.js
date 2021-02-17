@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const db = require('./db');
-const itemRouter = require('./routes/item-router');
+const itemRouter = require('./routes/book-router');
 
 const app = express();
 const apiPort = 3000;
