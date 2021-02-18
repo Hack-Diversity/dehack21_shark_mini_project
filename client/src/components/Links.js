@@ -60,7 +60,7 @@ class Links extends Component {
                         className="navbar-brand"
                         style={brandStyles}
                     >
-                        Coffe shop
+                        Shark Coffe
                     </Link>
                 </HomeWrapper>
                 <Collapse>

@@ -13,7 +13,6 @@
 .card-item-icon {
   transform: scale(8);
 } 
-
 .book-icon {
   color: rgb(0, 5, 146); 
 }
@@ -66,3 +65,23 @@
   color: rgb(4, 10, 163);
   border: 1px solid rgb(4, 10, 163); 
 }
+
+/* Modal */
+.modal-title{
+  margin-left: 2.5rem;
+  margin-top: 1rem;
+}
+
+.modal-item-image{
+  text-align: center;
+  height: 16rem;
+  padding-top: 6rem;
+  background-color:#fafafa;
+}
+.modal-item-icon {
+  transform: scale(10);
+} 
+
+
+
+
