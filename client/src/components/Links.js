@@ -90,7 +90,7 @@ class Links extends Component {
                             </Link>
                         </Item>
                         <Item>
-                            <Link to="/items/react-table-v6" className="nav-link">
+                            <Link to="/login" className="nav-link">
                                 Admin Login
                             </Link>
                         </Item>
