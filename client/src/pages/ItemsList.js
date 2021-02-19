@@ -1,97 +1,51 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ItemCard from './ItemCard';
 import './ItemList.css';
-
-const items = [
-  {
-    id: 'p1',
-    title: 'To kill a Mockingbird',
-    author: "Harper Lee",
-    year: "1960",
-    ISBN: "1112",
-    copies: "2",
-    imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg',
-    creator: 'u1'
-  },
-  {
-    id: 'p2',
-    title: 'To kill a Mockingbird',
-    author: "Harper Lee",
-    year: "1960",
-    ISBN: "1112",
-    copies: "2",
-    imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg',
-    creator: 'u1'
-  },
-  {
-    id: 'p3',
-    title: 'To kill a Mockingbird',
-    author: "Harper Lee",
-    year: "1960",
-    ISBN: "1112",
-    copies: "2",
-    imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg',
-    creator: 'u1'
-  },
-  {
-    id: 'p4',
-    title: 'To kill a Mockingbird',
-    author: "Harper Lee",
-    year: "1960",
-    ISBN: "1112",
-    copies: "2",
-    imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg',
-    creator: 'u1'
-  },
-  {
-    id: 'p5',
-    title: 'To kill a Mockingbird',
-    author: "Harper Lee",
-    year: "1960",
-    ISBN: "1112",
-    copies: "2",
-    imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg',
-    creator: 'u1'
-  },
-];
+import axios from "axios";
 
 const ItemList = props => {
-  // if (props.items.length === 0) {
-  //   return (
-  //     <div className="place-list center">
-  //         <h2>No books found.</h2>
-  //     </div>
-  //   );
-  // }
+	const [loadedBooks, setLoadedBooks] = useState();
 
-  return (
-    <div className="list-container">
-      <ul className="item-list">
-      {items.map(item => (
-        <ItemCard
-          key={item.id}
-          id={item.id}
-          title={item.title}
-          author={item.author}
-          year={item.year}
-          isbn={item.isbn}
-          copies={item.copies}
-          image={item.imageUrl}
-          creator={item.creator}
-        />
-      ))}
-    </ul>
-    </div>
-    
-  );
+	useEffect(() => {
+		const fetchBooks = async () => {
+			try {
+				const response = await axios.get(
+					`http://localhost:3000/api/books`
+				);
+				console.log(response);
+				setLoadedBooks(response.data.books);
+			} catch (error) {
+				console.log("error");
+			}
+		};
+		fetchBooks();
+	}, []);
+
+	return (
+		<React.Fragment>
+			{loadedBooks && (
+        <div className="list-container">
+          <ul className="item-list">
+            {loadedBooks.map(item => (
+              <ItemCard
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                author={item.author}
+                publication_year={item.publication_year}
+                isbn={item.isbn}
+                copies={item.copies}
+              />
+            ))}
+          </ul>
+        </div>
+			)}
+		</React.Fragment>
+	);
 };
 
 export default ItemList;
+
 
 
 
