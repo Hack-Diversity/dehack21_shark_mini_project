@@ -19,15 +19,14 @@ const ItemCard = props => {
           </div>
         </div>
           <div className="card-item-info">
-            <h3>
-            To Kill a Mokingbird
-            {/* {props.title} */}
+            <h3 className="card-item-title">
+            {props.title}
             </h3>
-            <h6>Harper Lee
-            {/* {props.author} */}
+            <h6>
+            {props.author}
             </h6>
-            <p>Copies: 2
-            {/* {props.copies} */}
+            <p>
+            Copies: {props.copies}
             </p>
           </div>
           <div className="card-item-buttons">
@@ -50,20 +49,15 @@ const ItemCard = props => {
           </div>
         </div>
           <h3 class="modal-title">
-          To Kill a Mokingbird
-            {/* {props.title} */}
+            {props.title}
           </h3>
         {/* </Modal.Header> */}
         <Modal.Body>
             <ul>
-              <li>Author(s):
-              {/* {props.author} */}</li>
-              <li>Year_Of_Publication:
-              {/* {props.Year_Of_Publication} */}</li>
-              <li>ISBN:
-              {/* {props.ISBN} */}</li>
-              <li>Copies:
-              {/* {props.copies} */}</li>
+              <li>Author(s): {props.author}</li>
+              <li>Year Of Publication: {props.publication_year}</li>
+              <li>ISBN: {props.isbn}</li>
+              <li>Copies: {props.copies}</li>
             </ul>
         </Modal.Body>
         <Modal.Footer>

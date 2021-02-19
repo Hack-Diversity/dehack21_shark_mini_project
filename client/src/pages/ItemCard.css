@@ -1,5 +1,6 @@
 .card-item {
-  margin: .5rem .5rem;
+  margin: 1rem .5rem;
+  width: 22rem;
 }
 .card-item-content {
   padding: 0 .5rem;
@@ -18,6 +19,9 @@
 }
 .card-item-title {
  margin-top: 2rem;
+ overflow: hidden;
+ height: 2.2rem;
+ width: 20rem;
 }
 
 .card-item-info {
