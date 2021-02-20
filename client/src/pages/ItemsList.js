@@ -30,6 +30,7 @@ const ItemList = props => {
               <ItemCard
                 key={item.id}
                 id={item.id}
+				image={item.image_url_m}
                 title={item.title}
                 author={item.author}
                 publication_year={item.publication_year}
