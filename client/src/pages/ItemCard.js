@@ -14,8 +14,8 @@ const ItemCard = props => {
       <li className="card-item" onClick={handleShow}>
         <div className="card-item-content">
         <div className="card-item-image">
+            <img src={props.image}/>
           <div className="card-item-icon">
-            <MenuBookTwoToneIcon className="book-icon"/>
           </div>
         </div>
           <div className="card-item-info">
@@ -44,8 +44,9 @@ const ItemCard = props => {
         {/* <Modal.Header closeButton> 
         </Modal.Header> */}
         <div className="modal-item-image">
+          <img src={props.image}/>
           <div className="modal-item-icon">
-            <MenuBookTwoToneIcon className="book-icon"/>
+            {/* <MenuBookTwoToneIcon className="book-icon"/> */}
           </div>
         </div>
           <h3 class="modal-title">
