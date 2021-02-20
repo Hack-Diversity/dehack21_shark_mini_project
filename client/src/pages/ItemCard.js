@@ -15,8 +15,6 @@ const ItemCard = props => {
         <div className="card-item-content">
         <div className="card-item-image">
             <img src={props.image}/>
-          <div className="card-item-icon">
-          </div>
         </div>
           <div className="card-item-info">
             <h3 className="card-item-title">

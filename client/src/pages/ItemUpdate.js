@@ -248,3 +248,12 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchSingleItem, updateSingleItem }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemUpdate);
+
+
+
+
+
+
+
+
+
