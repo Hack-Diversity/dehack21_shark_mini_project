@@ -36,7 +36,7 @@ const Welcome = props => {
 			{loadedBooks && (
                 <div className="list-container">
           <ul className="item-list">
-            {loadedBooks.slice(0,100).map(item => (
+            {loadedBooks.slice(0,99).map(item => (
                 <ItemCard
                 key={item.id}
                 image={item.image_url_m}
