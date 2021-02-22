@@ -8,15 +8,10 @@
 }
 .card-item-image{
   text-align: center;
-  height: 12rem;
-  padding-top: 5rem;
+  height: 15rem;
+  padding-top: 1.5rem;
 }
-.card-item-icon {
-  transform: scale(8);
-} 
-.book-icon {
-  color: rgb(0, 5, 146); 
-}
+
 .card-item-title {
  margin-top: 2rem;
  overflow: hidden;
