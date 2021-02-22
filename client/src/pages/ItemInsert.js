@@ -9,7 +9,7 @@ import "./ItemInsert.css";
 const ItemInsert = () => {
 	const history = useHistory();
 
-	async function placeSubmitHandler(values, { setSubmitting, resetForm }) {
+	async function bookSubmitHandler(values, { setSubmitting, resetForm }) {
 		setSubmitting(true);
 		try {
 			const headers = {
@@ -18,11 +18,11 @@ const ItemInsert = () => {
 			const response = await axios.post(
 				"http://localhost:3000/api/book",
 				{
-					Title: values.title,
-                    Authors: values.author,
-                    Year_Of_Publication: values.publciationYear,
-                    Number_Of_Copies: values.copies,
-                    ISBN: values.isbn,
+										title: values.title,
+                    author: values.author,
+                    publication_year: values.publicationYear,
+                    copies: values.copies,
+                    isbn: values.isbn,
 				},
 				headers
 			);
@@ -44,9 +44,9 @@ const ItemInsert = () => {
 		<React.Fragment>
 			<h2>Add Books</h2>
 			<Formik
-				initialValues={{ title: "", author: "", publciationYear: "", copies: "", isbn: "", isSubmitting: true }}
+				initialValues={{ title: "", author: "", publicationYear: "", copies: "", isbn: "", isSubmitting: true }}
 				validationSchema={validationSchema}
-				// onSubmit={bookSubmitHandler}
+				onSubmit={bookSubmitHandler}
 			>
 				{/* Attirbutes from Formick API */}
 				{({

@@ -74,64 +74,93 @@ getBookById = async (req, res) => {
     });
 };
 
-createBook = (req, res) => {
-    const body = req.body;
-    // console.log('----------------------- createBook: req -----------------------')
-    // console.log(req);
-    // console.log('----------------------- createBook: body -----------------------')
-    // console.log(body);
 
-    if (!body) {
-        return res
-            .status(400)
-            .json({
-                success: false,
-                error: 'You must provide an book.',
-            });
+const createBook = async (req, res, next) => {
+    const { title, author, publication_year, isbn, copies } = req.body;
+    const createdBook = new Book({
+        title,
+        author,
+        publication_year,
+        isbn,
+        copies 
+    });
+  
+    try {
+      await createdBook.save();
+    } catch (err) {
+      return new error;
     }
+  
+    // res.json({ book: createdBook.toObject() });
+    res.json({ book: createdBook });
+  };
 
-    const book = new Book(body);
 
-    if (!book) {
-        console.error(`[Hack.Diversity React Template] - 400 in 'createBook': 'book' is malformed.`);
-        return res
-            .status(400)
-            .json({
-                success: false,
-                message: "'book' is malformed"
-            });
-    }
+// createBook = (req, res) => {
+//     const body = req.body;
+//     // console.log('----------------------- createBook: req -----------------------')
+//     // console.log(req);
+//     // console.log('----------------------- createBook: body -----------------------')
+//     // console.log(body);
 
-    // console.log('----------------------- createBook: book -----------------------')
-    // console.log(book);
+//     if (!body) {
+//         return res
+//             .status(400)
+//             .json({
+//                 success: false,
+//                 error: 'You must provide an book.',
+//             });
+//     }
 
-    return book
-        .save()
-        .then(() => {
-            console.error(`[Hack.Diversity React Template] - 201 in 'createBook': Book created!`);
-            return res
-                .status(201)
-                .json({
-                    success: true,
-                    id: book._id,
-                    message: 'Book created!',
-                });
-        })
-        .catch(err => {
-            console.error(`[Hack.Diversity React Template] - caught error in 'createBook': ${err.errors.name}`);
-            Object.keys(err.errors).forEach(errorKey => {
-                console.error(`ERROR for: ${errorKey}`);
-                console.error(`=> ${((err.errors[errorKey] || {}).properties || {}).message}`);
-            })
-            return res
-                .status(400)
-                .json({
-                    success: false,
-                    error: err.errors,
-                    message: err.errors.name,
-                });
-        });
-};
+//     const book = new Book(body);
+
+//     if (!book) {
+//         console.error(`[Hack.Diversity React Template] - 400 in 'createBook': 'book' is malformed.`);
+//         return res
+//             .status(400)
+//             .json({
+//                 success: false,
+//                 message: "'book' is malformed"
+//             });
+//     }
+
+//     // console.log('----------------------- createBook: book -----------------------')
+//     // console.log(book);
+
+//     return book
+//         .save()
+//         .then(() => {
+//             console.error(`[Hack.Diversity React Template] - 201 in 'createBook': Book created!`);
+//             return res
+//                 .status(201)
+//                 .json({
+//                     success: true,
+//                     id: book._id,
+//                     message: 'Book created!',
+//                 });
+//         })
+//         .catch(err => {
+//             console.error(`[Hack.Diversity React Template] - caught error in 'createBook': ${err.errors.name}`);
+//             Object.keys(err.errors).forEach(errorKey => {
+//                 console.error(`ERROR for: ${errorKey}`);
+//                 console.error(`=> ${((err.errors[errorKey] || {}).properties || {}).message}`);
+//             })
+//             return res
+//                 .status(400)
+//                 .json({
+//                     success: false,
+//                     error: err.errors,
+//                     message: err.errors.name,
+//                 });
+//         });
+// };
+
+
+
+
+
+
+
 
 updateBook = (req, res) => {
     const body = req.body;
