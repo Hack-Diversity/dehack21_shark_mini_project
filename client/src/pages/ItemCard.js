@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import MenuBookTwoToneIcon from '@material-ui/icons/MenuBookTwoTone';
+// import MenuBookTwoToneIcon from '@material-ui/icons/MenuBookTwoTone';
 import Modal from 'react-bootstrap/Modal';
 
 import './ItemCard.css';
@@ -47,7 +47,7 @@ const ItemCard = props => {
             {/* <MenuBookTwoToneIcon className="book-icon"/> */}
           </div>
         </div>
-          <h3 class="modal-title">
+          <h3 className="modal-title">
             {props.title}
           </h3>
         {/* </Modal.Header> */}
