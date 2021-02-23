@@ -19,6 +19,6 @@ export const routes = {
   ITEMS,
   ITEM,
   ITEM_INSERT,
-  ITEM_UPDATE,
   LOG_OUT,
+  ITEM_UPDATE,
 };
