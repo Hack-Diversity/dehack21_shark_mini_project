@@ -28,9 +28,9 @@ const ItemList = props => {
           <ul className="item-list">
             {loadedBooks.map(item => (
               <ItemCard
-                key={item.id}
-                id={item.id}
-				image={item.image_url_m}
+                key={item._id}
+                id={item._id}
+								image={item.image_url_m}
                 title={item.title}
                 author={item.author}
                 publication_year={item.publication_year}

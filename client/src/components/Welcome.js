@@ -38,9 +38,9 @@ const Welcome = props => {
           <ul className="item-list">
             {loadedBooks.slice(0,99).map(item => (
                 <ItemCard
-                key={item.id}
+                key={item._id}
                 image={item.image_url_m}
-                id={item.id}
+                id={item._id}
                 title={item.title}
                 author={item.author}
                 publication_year={item.publication_year}
